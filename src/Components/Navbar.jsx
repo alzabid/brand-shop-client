@@ -34,7 +34,7 @@ const Navbar = () => {
             <NavLink to="/add"> Add Product </NavLink>
           </li>
           <li>
-            <NavLink to="/update"> Update Product </NavLink>
+            <NavLink to="/cart"> Cart </NavLink>
           </li>
         </>
       )}
