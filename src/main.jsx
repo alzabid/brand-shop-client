@@ -13,6 +13,7 @@ import UpdateProduct from "./Pages/UpdateProduct";
 import AddProduct from "./Pages/AddProduct";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Products from "./Pages/Products";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,15 +23,20 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        // loader: () => fetch("/data.json"),
+        loader: () => fetch("/data.json"),
+      },
+      {
+        path: "/products/:brand",
+        element: <Products></Products>,
+      
       },
       {
         path: "/about",
-        element: <About></About>
+        element: <About></About>,
       },
       {
         path: "/contact",
-        element: <Contact></Contact>
+        element: <Contact></Contact>,
       },
       {
         path: "/login",
@@ -46,11 +52,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/add",
-        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/Update",
-        element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivateRoute>
+        ),
       },
     ],
   },

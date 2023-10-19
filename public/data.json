@@ -1,0 +1,8 @@
+[
+  { "id": "1", "brand": "Apple", "img":"https://i.ibb.co/KNVNQ0w/Apple.jpg" },
+  { "id": "2", "brand": "Samsung", "img": "https://i.ibb.co/3d0Szmk/Samsung.jpg" },
+  { "id": "3", "brand": "Waltaon", "img": "https://i.ibb.co/9YygJHF/Walton.jpg" },
+  { "id": "4", "brand": "Xiaomi", "img": "https://i.ibb.co/YRngBmy/Xiaomi.jpg" },
+  { "id": "5", "brand": "Oppo", "img": "https://i.ibb.co/X8FsyVF/Oppo.jpg" },
+  { "id": "6", "brand": "Sony", "img": "https://i.ibb.co/TvjBzG0/Sony.jpg" }
+]

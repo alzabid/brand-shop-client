@@ -1,12 +1,15 @@
+
 import Banner from "../Components/Banner";
-import Brands from "../Components/Brands";
+import BrandList from "../Components/brandList";
+
 
 
 const Home = () => {
+     
     return (
         <div>
            <Banner></Banner>
-           <Brands></Brands>
+           <BrandList></BrandList>
         </div>
     );
 };
