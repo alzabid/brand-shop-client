@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Ads from "../Components/Ads";
 
-
 const Products = () => {
   const [products, setProducts] = useState([]);
   const { brand } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${brand}`)
+    fetch(
+      `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/product/${brand}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -39,7 +40,6 @@ const Products = () => {
           </div>
         </>
       )}
-
     </div>
   );
 };

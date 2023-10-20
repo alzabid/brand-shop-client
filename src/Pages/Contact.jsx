@@ -24,7 +24,8 @@ const Contact = () => {
                 <div className="card-body">
                   <p className="card-title">Our Location</p>
                   <p>
-                    342/A, Milson Avenue, Brookleen <br /> Lane, USA
+                    Mirpur -10 Sha-Ali-Plaza, level-7 ( Lift-6 ) 
+                    <br /> Dhaka.
                   </p>
                 </div>
               </div>
@@ -77,7 +78,6 @@ const Contact = () => {
                       type="text"
                       placeholder="name"
                       className="input input-bordered"
-                      
                     />
                   </div>
                   <div className="form-control">
@@ -88,7 +88,6 @@ const Contact = () => {
                       type="email"
                       placeholder="email"
                       className="input input-bordered"
-                      
                     />
                   </div>
                   <div className="form-control">
@@ -99,7 +98,6 @@ const Contact = () => {
                       type="number"
                       placeholder="Phone number"
                       className="input input-bordered"
-                      
                     />
                   </div>
                   <label className="label">

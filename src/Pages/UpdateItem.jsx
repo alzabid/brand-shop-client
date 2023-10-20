@@ -1,11 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
 
-
-
 const UpdateItem = () => {
-    const loadedProduct = useLoaderData()
-    const{_id, name,brand, category, price, details,rating, photo }= loadedProduct
+  const loadedProduct = useLoaderData();
+  const { _id, name, brand, category, price, details, rating, photo } =
+    loadedProduct;
 
   const handleUpdateProduct = (event) => {
     event.preventDefault();
@@ -31,13 +30,16 @@ const UpdateItem = () => {
     console.log(newUpdateProduct);
 
     // send data to server
-    fetch(`http://localhost:5000/updateProduct/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newUpdateProduct),
-    })
+    fetch(
+      `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/updateProduct/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newUpdateProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -154,7 +156,7 @@ const UpdateItem = () => {
             </label>
             <label className="input-group">
               <input
-              defaultValue={photo}
+                defaultValue={photo}
                 type="text"
                 name="photo"
                 placeholder="Photo URL"

@@ -38,7 +38,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/products/${params.id}`
+          ),
       },
 
       {
@@ -57,7 +59,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/add",
@@ -74,7 +78,10 @@ const router = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () =>
+          fetch(
+            "https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/cart"
+          ),
       },
       {
         path: "/contact",

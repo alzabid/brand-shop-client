@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 import Swal from "sweetalert2";
 
-
-
 const CartCard = ({ element, products, setProducts }) => {
-  const { _id, name, brand, price, photo, rating } = element;
+  const { _id, name, brand, price, photo, rating, category } = element;
 
   const handleDelete = (_id) => {
     console.log(_id);
@@ -18,9 +16,12 @@ const CartCard = ({ element, products, setProducts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/cart/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -45,7 +46,10 @@ const CartCard = ({ element, products, setProducts }) => {
           <img src={photo} alt="" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title"> {brand}</h2>
+          <div className="flex justify-between items-center ">
+            <h2 className="card-title"> {brand}</h2>
+            <div className="badge badge-accent">{category}</div>
+          </div>
           <h2 className="card-title">{name}</h2>
           <p>Price: {price} TK</p>
           <p>Rating: {rating}</p>

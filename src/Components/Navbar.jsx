@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import AOS from "aos";
@@ -6,6 +6,25 @@ import "aos/dist/aos.css";
 import { AuthContext } from "../AuthProvider";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -48,7 +67,7 @@ const Navbar = () => {
   );
   return (
     <div data-aos="" className="sticky inset-0 z-20">
-      <div className="navbar md:px-5 lg:px-10 bg-white  ">
+      <div className="navbar md:px-5 lg:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -75,13 +94,26 @@ const Navbar = () => {
             </ul>
           </div>
           <NavLink to="/">
-            <img className=" w-32 md:w-40" src="/img/logo.png" alt="" />
+            <img className=" w-24 md:w-40" src="/img/logo.png" alt="" />
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
+          {/* toggle button */}
+          <div className="form-control">
+            <label className="label cursor-pointer">
+              <span className="label-text px-2"></span>
+              <input
+                type="checkbox"
+                className="toggle"
+                onChange={handleToggle}
+                checked={theme === "light" ? false : true}
+              />
+            </label>
+          </div>
+          {/* user Avatar */}
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}

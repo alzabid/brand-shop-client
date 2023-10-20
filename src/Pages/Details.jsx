@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../AuthProvider";
 
-
 const Details = () => {
   const { user } = useContext(AuthContext);
   const loadedData = useLoaderData();
@@ -12,13 +11,16 @@ const Details = () => {
   const handleCart = () => {
     const cart = { ...loadedData, user: user.email };
     delete cart._id;
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(cart),
-    })
+    fetch(
+      "https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cart),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
