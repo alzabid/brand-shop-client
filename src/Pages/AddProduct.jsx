@@ -2,7 +2,8 @@ import swal from "sweetalert";
 
 
 const AddProduct = () => {
-  const handleAddCoffee = (event) => {
+  
+  const handleAddProduct = (event) => {
     event.preventDefault();
 
     const form = event.target;
@@ -37,7 +38,7 @@ const AddProduct = () => {
   return (
     <div className="bg-[#F4F3F0] px-6 md:px-10 lg:px-52 py-10">
       <h2 className="text-3xl text-center  font-extrabold mb-5">Add Product</h2>
-      <form onSubmit={handleAddCoffee}>
+      <form onSubmit={handleAddProduct}>
         {/* product and brand name */}
         <div className="md:flex gap-4 mb-8">
           <div className="form-control md:w-1/2">
