@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import CartCard from "./CartCard";
+import { useState } from "react";
 
 
 const Cart = () => {
     const cartData =useLoaderData()
-    // console.log(cartData)
+    const [products, setProducts] = useState([]);
     
     return (
       <div>
@@ -13,6 +14,8 @@ const Cart = () => {
             <CartCard
               key={element._id}
               element={element}
+              products={products}
+              setProducts={setProducts}
             ></CartCard>
           ))}
         </div>

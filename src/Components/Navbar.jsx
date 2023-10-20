@@ -34,10 +34,13 @@ const Navbar = () => {
             <NavLink to="/add"> Add Product </NavLink>
           </li>
           <li>
-            <NavLink to="/cart"> Cart </NavLink>
+            <NavLink to="/cart"> My Cart </NavLink>
           </li>
         </>
       )}
+      <li>
+        <NavLink to="/login"> Login </NavLink>
+      </li>
       <li>
         <NavLink to="/register"> Register </NavLink>
       </li>

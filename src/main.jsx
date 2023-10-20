@@ -10,7 +10,6 @@ import Register from "./Pages/Register";
 import AuthProvider from "./AuthProvider";
 import PrivateRoute from "./PrivateRoute";
 import AddProduct from "./Pages/AddProduct";
-import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Products from "./Pages/Products";
 import UpdateItem from "./Pages/UpdateItem";
@@ -33,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <UpdateItem></UpdateItem>,
+        element: (
+          <PrivateRoute>
+            <UpdateItem></UpdateItem>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
       },
@@ -66,12 +69,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart></Cart>,
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/cart"),
-      },
-      {
-        path: "/about",
-        element: <About></About>,
       },
       {
         path: "/contact",
