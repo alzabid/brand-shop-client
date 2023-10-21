@@ -5,5 +5,5 @@
 - Brand Section.
 - Services Section.
 - Footer.
-- Firebase email-password and google sign-in and sign-up.
-- Using Mongodb.
+- Firebase email-password and google sign-in/sign-up Authentication System.
+- Using Mongodb Database.

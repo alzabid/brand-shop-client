@@ -115,7 +115,7 @@ const Navbar = () => {
             <label
               tabIndex={0}
               className={`avatar btn btn-ghost btn-circle 
-              ${user ? "online" : "offline"} mx-3`}
+              ${user ? "online" : "offline"} md:mx-3`}
             >
               <div className=" w-10 md:w-12 rounded-full">
                 {user ? (
