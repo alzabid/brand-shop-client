@@ -2,7 +2,7 @@
 
 const Services = () => {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-6 md:px-10 pb-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-6 md:px-10 py-10 ">
         <div className="flex flex-col items-center justify-center border border-black p-4">
           <img className="mb-5" src="/img/service1.png" alt="" />
           <p className="text-xl font-semibold ">100% SECURE PAYMENTS</p>

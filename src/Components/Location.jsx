@@ -2,9 +2,9 @@
 
 const Location = () => {
     return (
-      <div className=" ">
+      <div className=" px-6 md:px-10 ">
         <div className=" h-[300px] bg-[url('/img/bg.jpg')] bg-no-repeat bg-cover bg-center">
-          <div className=" px-6 md:px-20 py-20">
+          <div className=" px-6 md:px-20 py-12 md:py-20">
             <p className=" text-white text-2xl md:text-4xl font-semibold  ">
               Join our newsletter and get...
             </p>

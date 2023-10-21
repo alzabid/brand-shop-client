@@ -43,10 +43,6 @@ const Navbar = () => {
       <li className="text-2xl">
         <NavLink to="/"> Home </NavLink>
       </li>
-      <li className="text-2xl">
-        <NavLink to="/contact"> Contacts </NavLink>
-      </li>
-
       {user && (
         <>
           <li className="text-2xl">
@@ -57,6 +53,9 @@ const Navbar = () => {
           </li>
         </>
       )}
+      <li className="text-2xl">
+        <NavLink to="/contact"> Contacts </NavLink>
+      </li>
       <li className="text-2xl">
         <NavLink to="/register"> Register </NavLink>
       </li>
