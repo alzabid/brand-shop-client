@@ -1,43 +1,42 @@
 /* eslint-disable react/prop-types */
-import Swal from "sweetalert2";
 
-const CartCard = ({ element, products, setProducts }) => {
+const CartCard = ({ element, handleDelete }) => {
   const { _id, name, brand, price, photo, rating, category } = element;
 
-  const handleDelete = (_id) => {
-    console.log(_id);
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(
-          `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/cart/${_id}`,
-          {
-            method: "DELETE",
-          }
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount > 0) {
-              Swal.fire(
-                "Deleted!",
-                "Your Product has been deleted.",
-                "success"
-              );
-              const remaining = products.filter((x) => x._id !== _id);
-              setProducts(remaining);
-            }
-          });
-      }
-    });
-  };
+  // const handleDelete = (_id) => {
+  //   console.log(_id);
+  //   Swal.fire({
+  //     title: "Are you sure?",
+  //     text: "You won't be able to revert this!",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Yes, delete it!",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       fetch(
+  //         `https://brand-shop-server-rose.vercel.app/cart/${_id}`,
+  //         {
+  //           method: "DELETE",
+  //         }
+  //       )
+  //         .then((res) => res.json())
+  //         .then((data) => {
+  //           console.log(data);
+  //           if (data.deletedCount > 0) {
+  //             Swal.fire(
+  //               "Deleted!",
+  //               "Your Product has been deleted.",
+  //               "success"
+  //             );
+  //             const remaining = products.filter((x) => x._id !== _id);
+  //             setProducts(remaining);
+  //           }
+  //         });
+  //     }
+  //   });
+  // };
 
   return (
     <div>

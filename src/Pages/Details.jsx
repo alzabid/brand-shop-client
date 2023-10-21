@@ -11,16 +11,13 @@ const Details = () => {
   const handleCart = () => {
     const cart = { ...loadedData, user: user.email };
     delete cart._id;
-    fetch(
-      "https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/cart",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(cart),
-      }
-    )
+    fetch("https://brand-shop-server-rose.vercel.app/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cart),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

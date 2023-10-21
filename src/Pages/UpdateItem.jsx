@@ -30,16 +30,13 @@ const UpdateItem = () => {
     console.log(newUpdateProduct);
 
     // send data to server
-    fetch(
-      `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/updateProduct/${_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newUpdateProduct),
-      }
-    )
+    fetch(`https://brand-shop-server-rose.vercel.app/updateProduct/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newUpdateProduct),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

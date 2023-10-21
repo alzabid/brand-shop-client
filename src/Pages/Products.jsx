@@ -9,9 +9,7 @@ const Products = () => {
   const { brand } = useParams();
 
   useEffect(() => {
-    fetch(
-      `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/product/${brand}`
-    )
+    fetch(`https://brand-shop-server-rose.vercel.app/product/${brand}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

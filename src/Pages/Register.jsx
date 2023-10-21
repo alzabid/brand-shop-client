@@ -10,18 +10,17 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [registerError, setRegisterError] = useState("");
-  // const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(true);
 
   const handleRegister = (e) => {
     e.preventDefault();
+    const photo = e.target.photo.value;
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, email, password);
+    console.log(photo, name, email, password);
 
     setRegisterError("");
-    // setSuccess("");
 
     if (password.length < 6) {
       setRegisterError("password should 6 character");
@@ -38,7 +37,7 @@ const Register = () => {
     createUser(email, password)
       // eslint-disable-next-line no-unused-vars
       .then((result) => {
-        handleUpdateProfile(name).then(() => {
+        handleUpdateProfile(name, photo).then(() => {
           swal("Good job!", "You created an account successfully!", "success");
           navigate("/");
         });
@@ -68,6 +67,18 @@ const Register = () => {
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
               <form onSubmit={handleRegister}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Photo URL</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="photo"
+                    placeholder="Photo URL"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
@@ -104,7 +115,7 @@ const Register = () => {
                     required
                   />
                   <span
-                    className="absolute top-[252PX] right-10 link link-hover"
+                    className="absolute top-[338PX] right-12 link link-hover"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}

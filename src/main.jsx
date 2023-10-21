@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/products/${params.id}`
+            `https://brand-shop-server-rose.vercel.app/products/${params.id}`
           ),
       },
 
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/products/${params.id}`
+            `https://brand-shop-server-rose.vercel.app/products/${params.id}`
           ),
       },
       {
@@ -78,10 +78,7 @@ const router = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoute>
         ),
-        loader: () =>
-          fetch(
-            "https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/cart"
-          ),
+        loader: () => fetch("https://brand-shop-server-rose.vercel.app/cart"),
       },
       {
         path: "/contact",

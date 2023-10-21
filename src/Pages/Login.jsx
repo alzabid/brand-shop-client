@@ -74,7 +74,6 @@ const Login = () => {
                     name="password"
                     placeholder="password"
                     className="input input-bordered"
-                    required
                   />
                   <span
                     className="absolute top-[170PX] right-10 link link-hover"

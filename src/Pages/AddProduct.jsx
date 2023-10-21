@@ -3,6 +3,7 @@ import swal from "sweetalert";
 const AddProduct = () => {
   const handleAddProduct = (event) => {
     event.preventDefault();
+    
 
     const form = event.target;
     const name = form.name.value;
@@ -15,18 +16,16 @@ const AddProduct = () => {
 
     const newProduct = { name, brand, category, price, details, photo, rating };
     console.log(newProduct);
+     
 
     // send data to server
-    fetch(
-      "https://brand-shop-server-kfp3qze1h-al-zabids-projects.vercel.app/product",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newProduct),
-      }
-    )
+    fetch("https://brand-shop-server-rose.vercel.app/product", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -34,6 +33,8 @@ const AddProduct = () => {
           swal("Good job!", "successfully added product!", "success");
         }
       });
+
+      // form.reset();
   };
 
   return (

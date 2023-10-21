@@ -1,13 +1,12 @@
 const Banner = () => {
   return (
     <div>
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage: "url(https://i.ibb.co/XJZwF0J/banner2.jpg)",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-20"></div>
+      <div className="carousel w-full">
+        <div id="slide1" className="carousel-item relative w-full">
+          <img src="/img/bg2.jpg" className="w-full" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          </div>
+        </div>
       </div>
     </div>
   );

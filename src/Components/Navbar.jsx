@@ -40,34 +40,31 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li>
+      <li className="text-2xl">
         <NavLink to="/"> Home </NavLink>
       </li>
-      <li>
+      <li className="text-2xl">
         <NavLink to="/contact"> Contacts </NavLink>
       </li>
 
       {user && (
         <>
-          <li>
+          <li className="text-2xl">
             <NavLink to="/add"> Add Product </NavLink>
           </li>
-          <li>
+          <li className="text-2xl">
             <NavLink to="/cart"> My Cart </NavLink>
           </li>
         </>
       )}
-      <li>
-        <NavLink to="/login"> Login </NavLink>
-      </li>
-      <li>
+      <li className="text-2xl">
         <NavLink to="/register"> Register </NavLink>
       </li>
     </>
   );
   return (
-    <div data-aos="" className="sticky inset-0 z-20">
-      <div className="navbar md:px-5 lg:px-10">
+    <div data-aos="" className="sticky inset-0 z-20 ">
+      <div className="navbar md:px-5 lg:px-10 glass ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
