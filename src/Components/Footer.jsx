@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="">
-      <footer className="footer footer-center p-10 bg-gray-300 text-base-content rounded">
+      <footer className="footer footer-center p-10 bg-base-300 text-base-content rounded">
         <nav className="grid grid-flow-col gap-4">
           <Link to="/">
-            <p className=" link link-hover text-black">Home</p>
+            <p className=" link link-hover">Home</p>
           </Link>
-          <Link to="/about">
-            <p className=" link link-hover text-black">About</p>
+          <Link to="/">
+            <p className=" link link-hover">About</p>
           </Link>
           <Link to="/contact">
-            <p className=" link link-hover text-black">Contacts</p>
+            <p className=" link link-hover">Contacts</p>
           </Link>
         </nav>
         <nav>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </nav>
         <aside>
-          <p className="text-black">
+          <p className="">
             Copyright © 2023 - All right reserved by Brand Shop Ltd.
           </p>
         </aside>

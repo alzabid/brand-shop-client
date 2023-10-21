@@ -38,7 +38,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="bg-[#F4F3F0] px-6 md:px-10 lg:px-52 py-10">
+    <div className="bg-base-200 px-6 md:px-10 lg:px-52 py-10">
       <h2 className="text-3xl text-center  font-extrabold mb-5">Add Product</h2>
       <form onSubmit={handleAddProduct}>
         {/* product and brand name */}
